@@ -29,14 +29,14 @@ spec:
             command:
               - cat
               - /healthcheck
-      securityContext:
+        securityContext:
+          runAsUser: 65534 #nobody
           readOnlyRootFilesystem: true
           allowPrivilegeEscalation: false
           runAsNonRoot: true
           capabilities: 
             drop: ["ALL"]
             add: ['NET_BIND_SERVICE']
-
       restartPolicy: Always
 ---
 apiVersion: v1
