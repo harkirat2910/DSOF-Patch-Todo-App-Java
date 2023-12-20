@@ -4105,6 +4105,10 @@ spec:
               name: host-local-net-dir
             - mountPath: /host/opt/cni/bin
               name: cni-bin-dir
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
           securityContext:
             privileged: false
             readOnlyRootFilesystem: true
@@ -4154,6 +4158,10 @@ spec:
               name: cni-bin-dir
             - mountPath: /host/etc/cni/net.d
               name: cni-net-dir
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
           securityContext:
             privileged: false
             readOnlyRootFilesystem: true
@@ -4171,6 +4179,10 @@ spec:
           volumeMounts:
           - name: flexvol-driver-host
             mountPath: /host/driver
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
           securityContext:
             privileged: false
             readOnlyRootFilesystem: true
@@ -4256,6 +4268,10 @@ spec:
               value: "false"
             - name: FELIX_HEALTHENABLED
               value: "true"
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
           securityContext:
             privileged: false
             readOnlyRootFilesystem: true
