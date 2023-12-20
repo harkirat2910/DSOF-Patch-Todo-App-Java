@@ -4333,7 +4333,7 @@ spec:
               mountPath: /sys/fs/
               # Bidirectional means that, if we mount the BPF filesystem at /sys/fs/bpf it will propagate to the host.
               # If the host is known to mount that filesystem already then Bidirectional can be omitted.
-              mountPropagation: Bidirectional
+              mountPropagation: None
             - name: cni-log-dir
               mountPath: /var/log/calico/cni
               readOnly: true
@@ -4454,6 +4454,7 @@ spec:
               - /usr/bin/check-status
               - -r
             periodSeconds: 10
+          imagePullPolicy: Always
           securityContext:
             readOnlyRootFilesystem: true
             allowPrivilegeEscalation: false
