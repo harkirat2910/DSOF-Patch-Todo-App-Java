@@ -20,6 +20,11 @@ spec:
       - image: ${DOCKER_ACCOUNT}/java-goof:latest
         imagePullPolicy: Always
         name: java-goof
+        livenessProbe:
+          exec:
+            command:
+              - cat
+              - /healthcheck
         securityContext:
           allowPrivilegeEscalation: false
           runAsNonRoot: true
